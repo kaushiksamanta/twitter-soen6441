@@ -1,0 +1,9 @@
+@(tweets: List[twitter4j.Status])
+
+<p>
+    @for(tweet <- tweets) {
+        <li>@tweet.getText()</li>
+    }
+</p>
+
+
