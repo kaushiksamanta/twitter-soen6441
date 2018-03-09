@@ -1,5 +1,8 @@
 package services;
 
+import play.libs.Json;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import twitter4j.Status;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
@@ -23,12 +26,18 @@ public class twitterService {
         return twitter;
     }
 
-    public static List<Status> getTweets(String keyword) throws TwitterException {
+    public static ArrayNode getTweets(String keyword) throws TwitterException {
         Twitter twitter = getTwitterinstance();
         Query query = new Query(keyword);
         query.setCount(10);
         QueryResult result = twitter.search(query);
         List<Status> tweets = result.getTweets();
-        return tweets;
+        ArrayNode tweetJSON = Json.newArray();
+        tweets.forEach((tweet) -> {
+        	ObjectNode node = Json.newObject();
+        	node.put("text", tweet.getText());
+        	tweetJSON.add(node);
+        });
+        return tweetJSON;
     }
 }
