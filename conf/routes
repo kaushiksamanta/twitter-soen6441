@@ -5,6 +5,8 @@
 # Root controller to show twitter search page
 GET     /                               controllers.IndexController.root()
 
+GET     /userProfile/:username          controllers.ProfileController.profile(username: String)
+
 GET		/tweets/:keyword				controllers.SearchController.searchTweet(keyword: String)
 
 # Map static resources from the /public folder to the /assets URL path

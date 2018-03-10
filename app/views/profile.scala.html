@@ -1,7 +1,45 @@
-<h1>Tweet Analytics</h1>
-
-<p>
-    Hello
-</p>
-
+@import twitter4j.User
+@import twitter4j.Status
+@(username: String, user: User, timeline: List[Status])
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+    <head>
+        <title>TweetAnalytics - Profile (@username)</title>
+        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("img/favicon.png")">
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/demo.css")" />
+        <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/style2.css")" />
+        <script src="@routes.Assets.versioned("javascripts/jquery-3.3.1.min.js")"></script>
+            <!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+    </head>
+    <body class="demo-2">
+        <div class="tweets-body">
+            <p class="p-headline">User Profile</p>
+            <img class="img-center" src="@user.getBiggerProfileImageURLHttps()">
+            <p class="center">ID - @user.getId()</p>
+            <p class="center">NAME - @user.getName()</p>
+            @if(user.getEmail()!= null) {
+                <p class="center">EMAIL - @user.getEmail()</p>
+            }
+            @if(user.getLocation()!= null) {
+                <p class="center">LOCATION - @user.getLocation()</p>
+            }
+            @if(user.getScreenName()!= null) {
+                <p class="center">TWITTER PROFILE - <a target="_blank" href="https://twitter.com/@user.getScreenName()">@user.getScreenName()</a></p>
+            }
+            @if(user.getDescription()!= null) {
+                <p class="center">DESCRIPTION - @user.getDescription()</p>
+            }
+            <p class="center">FOLLOWERS COUNT - @user.getFollowersCount()</p>
+            @if(user.getURL()!= null) {
+                <p class="center">PUBLIC URL - <a target="_blank" href="@user.getURL()">@user.getURL()</a></p>
+            }
+            <p class="p-headline">TIMELINE</p>
+            @for(tweet <- timeline) {
+                <p>* @tweet.getText()</p>
+            }
+        </div>
+    </body>
+</html>
 

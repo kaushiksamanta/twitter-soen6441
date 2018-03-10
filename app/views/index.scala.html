@@ -31,7 +31,7 @@
                 </symbol>
             </defs>
         </svg>
-        <main class="main-wrap">
+        <main class="main-wrap-open">
             <div class="search">
                 <button id="btn-search-close" class="btn btn--search-close" aria-label="Close search form"><svg class="icon icon--cross"><use xlink:href="#icon-cross"></use></svg></button>
                 <form class="search__form">
@@ -45,11 +45,12 @@
                 <div class="main-body">
                     <p>TweetAnalytics</p>
                 </div>
-                <div class="tweets-body">
-                    <p class="p-headline">Top Tweets</p>
-                </div>
+
             </div>
         </main>
+        <div class="tweets-body">
+            <p class="p-headline">Top Tweets</p>
+        </div>
         <script src="@routes.Assets.versioned("javascripts/search.js")"></script>
     </body>
 </html>

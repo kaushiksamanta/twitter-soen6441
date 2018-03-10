@@ -3,12 +3,7 @@ package services;
 import play.libs.Json;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import twitter4j.Status;
-import twitter4j.Twitter;
-import twitter4j.TwitterException;
-import twitter4j.TwitterFactory;
-import twitter4j.Query;
-import twitter4j.QueryResult;
+import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 import java.util.List;
 
@@ -36,8 +31,25 @@ public class twitterService {
         tweets.forEach((tweet) -> {
         	ObjectNode node = Json.newObject();
         	node.put("text", tweet.getText());
+        	node.put("name", tweet.getUser().getName());
+        	node.put("screenName", tweet.getUser().getScreenName());
         	tweetJSON.add(node);
         });
         return tweetJSON;
+    }
+
+    public static User getUserDetails(String username) throws TwitterException {
+        Twitter twitter = getTwitterinstance();
+        User user = twitter.showUser(username);
+        return user;
+    }
+
+    public static List<Status> getUsersTimeline(String username) throws TwitterException {
+        Twitter twitter = getTwitterinstance();
+        User user = twitter.showUser(username);
+        Paging p = new Paging();
+        p.setCount(10);
+        List<Status> timeline = twitter.getUserTimeline(user.getId(),p);
+        return timeline;
     }
 }

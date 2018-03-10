@@ -13,15 +13,27 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.main-wrap {
+.main-wrap-open {
 	position: relative;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
-	height: 100vh;
+	height: 20vh;
 	background-color: #282b2f;
-	background-image: url(../img/bg_2.svg);
+	background-repeat: no-repeat;
+	background-position: 50% 10em;
+	background-size: 75% auto;
+}
+
+.main-wrap-close {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 0vh;
+	background-color: #282b2f;
 	background-repeat: no-repeat;
 	background-position: 50% 10em;
 	background-size: 75% auto;

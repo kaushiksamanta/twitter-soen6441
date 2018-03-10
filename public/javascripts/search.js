@@ -33,25 +33,29 @@
         $(".tweets-body").hide();
 		searchContainer.classList.add('search--open');
 		inputSearch.focus();
+		$("main").removeClass("main-wrap-open");
+        $("main").addClass("main-wrap-close");
 	}
 
 	function closeSearch() {
 		if(fetchedData){
             $(".main-body").hide();
+            $(".tweets-body").show();
 		}
         else {
 			if(tweetsData.length != 0){
                 $(".main-body").show();
+                $(".tweets-body").show();
 			}
             else {
                 $(".main-body").hide();
 			}
 		}
         $(".search__suggestion").hide();
-        $(".tweets-body").show();
 		searchContainer.classList.remove('search--open');
 		inputSearch.blur();
-		inputSearch.value = '';
+        $("main").addClass("main-wrap-open");
+        $("main").removeClass("main-wrap-close");
 	}
 
 	init();
@@ -63,10 +67,10 @@
 			$.get("http://localhost:9000/tweets/" + inputSearch.value).done(function (data) {
                 tweetsData.concat(data);
                 closeSearch();
-                data.forEach(function (value,index) {
-                    dom+="<p>" + " " + "*" + " ";
-                	dom += value.text;
-                    dom+="</p>";
+                data.forEach(function (value) {
+                    dom += "<p>" + " " + "*" + " ";
+                	dom += "<a target='_blank' href='http://localhost:9000/userProfile/"+value.screenName+"'>(Username - "+value.name+")</a>" + "Tweet - "+value.text;
+                    dom += "</p>";
 				});
                 fetchedData = true;
                 $(".main-body").hide();
