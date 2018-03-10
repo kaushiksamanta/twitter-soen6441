@@ -6,6 +6,6 @@ import views.html.*;
 
 public class IndexController extends Controller{
 	public Result root() {
-        return ok(index.render());
+	    return ok(index.render());
     }
 }
