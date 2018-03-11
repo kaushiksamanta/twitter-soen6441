@@ -60,7 +60,7 @@
 
 	init();
 
-    $('#search-button').click(function (e) {
+    $('#search-form').submit(function (e) {
         e.preventDefault();
         if( inputSearch.value != '' ){
         	var dom = "";
