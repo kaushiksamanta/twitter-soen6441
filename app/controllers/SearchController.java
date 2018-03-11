@@ -1,15 +1,15 @@
 package controllers;
 
-import com.fasterxml.jackson.databind.node.ArrayNode;
 import play.mvc.Controller;
 import play.mvc.Result;
 import twitter4j.TwitterException;
 import services.twitterService;
 
+import java.util.concurrent.CompletionStage;
+
 public class SearchController extends Controller {
 
-    public Result searchTweet(String keyword) throws TwitterException {
-    	ArrayNode result = twitterService.getTweets(keyword);
-        return ok(result);
+    public CompletionStage<Result> searchTweet(String keyword) throws TwitterException {
+        return twitterService.getTweets(keyword).thenApplyAsync(tweets -> ok(tweets));
     }
 }

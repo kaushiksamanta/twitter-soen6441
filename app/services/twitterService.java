@@ -1,11 +1,15 @@
 package services;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import modals.userModal;
 import play.libs.Json;
 import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.CompletionStage;
 
 public class twitterService {
 
@@ -21,7 +25,8 @@ public class twitterService {
         return twitter;
     }
 
-    public static ArrayNode getTweets(String keyword) throws TwitterException {
+    public static CompletionStage<ArrayNode> getTweets(String keyword) throws TwitterException {
+        CompletableFuture<ArrayNode> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
         Query query = new Query(keyword);
         query.setCount(10);
@@ -35,13 +40,20 @@ public class twitterService {
         	node.put("screenName", tweet.getUser().getScreenName());
         	tweetJSON.add(node);
         });
-        return tweetJSON;
+        future.complete(tweetJSON);
+        return future;
     }
 
-    public static User getUserDetails(String username) throws TwitterException {
+    public static CompletionStage<userModal> getUserDetails(String username) throws TwitterException {
+        CompletableFuture<userModal> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
         User user = twitter.showUser(username);
-        return user;
+        List<Status> timeline = getUsersTimeline(username);
+        userModal usermodal = new userModal();
+        usermodal.setUser(user);
+        usermodal.setTimeline(timeline);
+        future.complete(usermodal);
+        return future;
     }
 
     public static List<Status> getUsersTimeline(String username) throws TwitterException {

@@ -1,10 +1,9 @@
-@import twitter4j.User
-@import twitter4j.Status
-@(username: String, user: User, timeline: List[Status])
+@import modals.userModal;
+@(user: userModal)
 <!DOCTYPE html>
 <html lang="en" class="no-js">
     <head>
-        <title>TweetAnalytics - Profile (@username)</title>
+        <title>TweetAnalytics - Profile (@user.getUser().getScreenName())</title>
         <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("img/favicon.png")">
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/demo.css")" />
         <link rel="stylesheet" type="text/css" href="@routes.Assets.versioned("stylesheets/style2.css")" />
@@ -16,27 +15,27 @@
     <body class="demo-2">
         <div class="tweets-body">
             <p class="p-headline">User Profile</p>
-            <img class="img-center" src="@user.getBiggerProfileImageURLHttps()">
-            <p class="center">ID - @user.getId()</p>
-            <p class="center">NAME - @user.getName()</p>
-            @if(user.getEmail()!= null) {
-                <p class="center">EMAIL - @user.getEmail()</p>
+            <img class="img-center" src="@user.getUser().getBiggerProfileImageURLHttps()">
+            <p class="center">ID - @user.getUser().getId()</p>
+            <p class="center">NAME - @user.getUser().getName()</p>
+            @if(user.getUser().getEmail()!= null) {
+                <p class="center">EMAIL - @user.getUser().getEmail()</p>
             }
-            @if(user.getLocation()!= null) {
-                <p class="center">LOCATION - @user.getLocation()</p>
+            @if(user.getUser().getLocation()!= null) {
+                <p class="center">LOCATION - @user.getUser().getLocation()</p>
             }
-            @if(user.getScreenName()!= null) {
-                <p class="center">TWITTER PROFILE - <a target="_blank" href="https://twitter.com/@user.getScreenName()">@user.getScreenName()</a></p>
+            @if(user.getUser().getScreenName()!= null) {
+                <p class="center">TWITTER PROFILE - <a target="_blank" href="https://twitter.com/@user.getUser().getScreenName()">@user.getUser().getScreenName()</a></p>
             }
-            @if(user.getDescription()!= null) {
-                <p class="center">DESCRIPTION - @user.getDescription()</p>
+            @if(user.getUser().getDescription()!= null) {
+                <p class="center">DESCRIPTION - @user.getUser().getDescription()</p>
             }
-            <p class="center">FOLLOWERS COUNT - @user.getFollowersCount()</p>
-            @if(user.getURL()!= null) {
-                <p class="center">PUBLIC URL - <a target="_blank" href="@user.getURL()">@user.getURL()</a></p>
+            <p class="center">FOLLOWERS COUNT - @user.getUser().getFollowersCount()</p>
+            @if(user.getUser().getURL()!= null) {
+                <p class="center">PUBLIC URL - <a target="_blank" href="@user.getUser().getURL()">@user.getUser().getURL()</a></p>
             }
             <p class="p-headline">TIMELINE</p>
-            @for(tweet <- timeline) {
+            @for(tweet <- user.getTimeline()) {
                 <p>* @tweet.getText()</p>
             }
         </div>
