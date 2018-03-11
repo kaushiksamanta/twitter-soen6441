@@ -1,6 +1,5 @@
 package services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import modals.userModal;
 import play.libs.Json;
 import com.fasterxml.jackson.databind.node.ArrayNode;
