@@ -5,7 +5,6 @@ import play.mvc.Result;
 import twitter4j.TwitterException;
 import services.twitterService;
 import views.html.*;
-
 import java.util.concurrent.CompletionStage;
 
 public class ProfileController extends Controller{
