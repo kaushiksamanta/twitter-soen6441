@@ -2,6 +2,10 @@ package modals;
 
 import java.util.List;
 
+/**
+ * userModal class to map the value from twitter and store it
+ * @author
+ */
 public class userModal {
 	protected long id;
 	protected String name;
