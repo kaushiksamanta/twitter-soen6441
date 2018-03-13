@@ -6,6 +6,8 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
@@ -47,10 +49,23 @@ public class twitterService {
         CompletableFuture<userModal> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
         User user = twitter.showUser(username);
-        List<Status> timeline = getUsersTimeline(username);
+        List<Status> timelineData = getUsersTimeline(username);
+        List<String> list = new ArrayList<String> ();
+        timelineData.forEach((data) -> {
+        	list.add(data.getText());
+        });
         userModal usermodal = new userModal();
-        usermodal.setUser(user);
-        usermodal.setTimeline(timeline);
+        usermodal.setId(user.getId());
+        usermodal.setName(user.getName());
+        usermodal.setEmail(user.getEmail());
+        usermodal.setScreenName(user.getScreenName());
+        usermodal.setLocation(user.getLocation());
+        usermodal.setDescription(user.getDescription());
+        usermodal.setFollowersCount(user.getFollowersCount());
+        usermodal.setUrl(user.getURL());
+        usermodal.setBiggerProfileImageURLHttps(user.getBiggerProfileImageURLHttps());
+        usermodal.setIsProtected(user.isProtected());
+        usermodal.setTimeline(list);
         future.complete(usermodal);
         return future;
     }
