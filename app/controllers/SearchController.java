@@ -14,16 +14,17 @@ import java.util.concurrent.CompletionStage;
  *
  */
 public class SearchController extends Controller {
+
     /**
-     * Returns the tweets related to the keyword(s) in JSON
-     * format on the localhost.
-     * The string argument must specify the keyword(s).
-     * This method always return immediately, whether or not the tweet(s )
-     * exist(s).
+     * An action that return JSON with the tweets details.
+     * The configuration in the <code>routes</code> file means that
+     * this method will be called when the application receives a
+     * <code>GET</code> request with a path of <code>/tweets/:keyword</code>.
      *
      * @param keyword  a string for keyword(s)
      * @return related tweets containing the keyword(s) in JSON format
      * @throws TwitterException
+     *
      */
     public CompletionStage<Result> searchTweet(String keyword) throws TwitterException {
         return twitterService.getTweets(keyword).thenApplyAsync(tweets -> ok(tweets));

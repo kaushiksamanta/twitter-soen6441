@@ -78,7 +78,7 @@
                 closeSearch();
                 data.forEach(function (value) {
                     dom += "<p>" + " " + "*" + " ";
-                	dom += "<a target='_blank' href='http://localhost:9000/userProfile/"+value.screenName+"'>(Username - "+value.name+")</a>" + "Tweet - "+value.text;
+                	dom += "<a target='_blank' href='http://localhost:9000/userProfile/"+value.screenName+"'>("+value.name+")</a>" + "Tweet - "+value.text;
                     dom += "</p>";
 				});
                 fetchedData = true;

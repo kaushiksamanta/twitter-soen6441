@@ -12,8 +12,18 @@ import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+/**
+ * twitterService class contains all the methods required to access the twitter API.
+ * @version 1.0
+ * @see twitterService
+ *
+ */
 public class twitterService {
 
+    /**
+     * Retrieve the instance of twitter with some default configuration.
+     * @return A Twitter data type.
+     */
     public static Twitter getTwitterinstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -26,6 +36,10 @@ public class twitterService {
         return twitter;
     }
 
+    /**
+     * Retrieve the instance of CompletionStage<ArrayNode> with tweets.
+     * @return A CompletionStage<ArrayNode> data type.
+     */
     public static CompletionStage<ArrayNode> getTweets(String keyword) throws TwitterException {
         CompletableFuture<ArrayNode> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
@@ -45,6 +59,10 @@ public class twitterService {
         return future;
     }
 
+    /**
+     * Retrieve the instance of CompletionStage<userModal> with userDetails.
+     * @return A CompletionStage<userModal> data type.
+     */
     public static CompletionStage<userModal> getUserDetails(String username) throws TwitterException {
         CompletableFuture<userModal> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
@@ -69,7 +87,10 @@ public class twitterService {
         future.complete(usermodal);
         return future;
     }
-
+    /**
+     * Retrieve the user timeline details.
+     * @return A List<Status> data type.
+     */
     public static List<Status> getUsersTimeline(String username) throws TwitterException {
         Twitter twitter = getTwitterinstance();
         User user = twitter.showUser(username);
