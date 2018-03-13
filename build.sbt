@@ -16,7 +16,11 @@ libraryDependencies ++= Seq(
   "org.assertj" % "assertj-core" % "3.6.2" % Test,
   "org.awaitility" % "awaitility" % "2.0.0" % Test,
   "org.twitter4j" % "twitter4j-async" % "4.0.6",
+<<<<<<< HEAD
   "javax.xml.bind" % "jaxb-api" % "2.1"
+=======
+  "org.mockito" % "mockito-core" % "2.10.0" % "test"
+>>>>>>> b44ed149200f75f0cc82a71cb45593e32693e961
 )
 
 // Make verbose tests

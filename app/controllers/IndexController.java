@@ -6,23 +6,21 @@ import views.html.*;
 
 
 /**
- * IndexController class implements the view @index.scala.html and 
- * contains an action to handle HTTP requeststo the application's 
- * root page.
- * 
- * 
- * @author 
+ * IndexController class contains an action to handle HTTP requests
+ * to the application's search page.
+ * @version 1.0
+ * @see IndexController
  */
 
-
 public class IndexController extends Controller{
-	
 	/**
-	 * An action that renders an HTML page with the search page for
-	 * the user to enter the keyword to get latest tweets related
-	 * @return
+	 * An action that renders an HTML page @view (index.scala.html) with a welcome message.
+	 * The configuration in the <code>routes</code> file means that
+	 * this method will be called when the application receives a
+	 * <code>GET</code> request with a path of <code>/</code>.
+	 *
 	 */
 	public Result root() {
-	    return ok(index.render());
+	    return ok(index.render("Welcome to TweetAnalytics"));
     }
 }

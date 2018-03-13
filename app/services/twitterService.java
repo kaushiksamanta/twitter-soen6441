@@ -6,12 +6,24 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import twitter4j.*;
 import twitter4j.conf.ConfigurationBuilder;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.CompletionStage;
 
+/**
+ * twitterService class contains all the methods required to access the twitter API.
+ * @version 1.0
+ * @see twitterService
+ *
+ */
 public class twitterService {
 
+    /**
+     * Retrieve the instance of twitter with some default configuration.
+     * @return A Twitter data type.
+     */
     public static Twitter getTwitterinstance() {
         ConfigurationBuilder cb = new ConfigurationBuilder();
         cb.setDebugEnabled(true)
@@ -24,6 +36,10 @@ public class twitterService {
         return twitter;
     }
 
+    /**
+     * Retrieve the instance of CompletionStage<ArrayNode> with tweets.
+     * @return A CompletionStage<ArrayNode> data type.
+     */
     public static CompletionStage<ArrayNode> getTweets(String keyword) throws TwitterException {
         CompletableFuture<ArrayNode> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
@@ -43,18 +59,38 @@ public class twitterService {
         return future;
     }
 
+    /**
+     * Retrieve the instance of CompletionStage<userModal> with userDetails.
+     * @return A CompletionStage<userModal> data type.
+     */
     public static CompletionStage<userModal> getUserDetails(String username) throws TwitterException {
         CompletableFuture<userModal> future = new CompletableFuture<>();
         Twitter twitter = getTwitterinstance();
         User user = twitter.showUser(username);
-        List<Status> timeline = getUsersTimeline(username);
+        List<Status> timelineData = getUsersTimeline(username);
+        List<String> list = new ArrayList<String> ();
+        timelineData.forEach((data) -> {
+        	list.add(data.getText());
+        });
         userModal usermodal = new userModal();
-        usermodal.setUser(user);
-        usermodal.setTimeline(timeline);
+        usermodal.setId(user.getId());
+        usermodal.setName(user.getName());
+        usermodal.setEmail(user.getEmail());
+        usermodal.setScreenName(user.getScreenName());
+        usermodal.setLocation(user.getLocation());
+        usermodal.setDescription(user.getDescription());
+        usermodal.setFollowersCount(user.getFollowersCount());
+        usermodal.setUrl(user.getURL());
+        usermodal.setBiggerProfileImageURLHttps(user.getBiggerProfileImageURLHttps());
+        usermodal.setIsProtected(user.isProtected());
+        usermodal.setTimeline(list);
         future.complete(usermodal);
         return future;
     }
-
+    /**
+     * Retrieve the user timeline details.
+     * @return A List<Status> data type.
+     */
     public static List<Status> getUsersTimeline(String username) throws TwitterException {
         Twitter twitter = getTwitterinstance();
         User user = twitter.showUser(username);
