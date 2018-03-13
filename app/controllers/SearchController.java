@@ -17,13 +17,13 @@ public class SearchController extends Controller {
 
     /**
      * An action that return JSON with the tweets details.
-     * The configuration in the <code>routes</code> file means that
+     * The configuration in the routes file means that
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/tweets/:keyword</code>.
      *
      * @param keyword  a string for keyword(s)
      * @return related tweets containing the keyword(s) in JSON format
-     * @throws TwitterException
+     * @throws TwitterException It throws a TwitterException
      *
      */
     public CompletionStage<Result> searchTweet(String keyword) throws TwitterException {

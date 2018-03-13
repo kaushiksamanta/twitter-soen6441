@@ -103,7 +103,7 @@ public class userModal {
 
 	/**
 	 * Set the value of timeline.
-	 * @param timeline A variable of type List<String>.
+	 * @param timeline A variable of type List.
 	 */
 	public void setTimeline(List<String> timeline) {
 		this.timeline = timeline;
@@ -191,7 +191,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of timeline.
-	 * @return A List<String> type.
+	 * @return A List type.
 	 */
 	public List<String> getTimeline() {
 		return timeline;

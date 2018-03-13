@@ -37,8 +37,10 @@ public class twitterService {
     }
 
     /**
-     * Retrieve the instance of CompletionStage<ArrayNode> with tweets.
-     * @return A CompletionStage<ArrayNode> data type.
+     * Retrieve the instance of CompletionStage with tweets.
+     * @param keyword A keyword of type string.
+     * @return A future data type.
+     * @throws TwitterException It throws a TwitterException
      */
     public static CompletionStage<ArrayNode> getTweets(String keyword) throws TwitterException {
         CompletableFuture<ArrayNode> future = new CompletableFuture<>();
@@ -60,8 +62,10 @@ public class twitterService {
     }
 
     /**
-     * Retrieve the instance of CompletionStage<userModal> with userDetails.
-     * @return A CompletionStage<userModal> data type.
+     * Retrieve the instance of CompletionStage with userDetails.
+     * @param username A username of type string.
+     * @return A future data type.
+     * @throws TwitterException It throws a TwitterException
      */
     public static CompletionStage<userModal> getUserDetails(String username) throws TwitterException {
         CompletableFuture<userModal> future = new CompletableFuture<>();
@@ -89,7 +93,9 @@ public class twitterService {
     }
     /**
      * Retrieve the user timeline details.
-     * @return A List<Status> data type.
+     * @param username A username of type string.
+     * @return A List data type.
+     * @throws TwitterException It throws a TwitterException
      */
     public static List<Status> getUsersTimeline(String username) throws TwitterException {
         Twitter twitter = getTwitterinstance();

@@ -17,13 +17,13 @@ import java.util.concurrent.CompletionStage;
 public class ProfileController extends Controller{
     /**
      * An action that renders an HTML page with the user profile details.
-     * The configuration in the <code>routes</code> file means that
+     * The configuration in the routes file means that
      * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/userProfile/:username</code>.
+     * <code>GET</code> request with a path of <code>/userProfile/:username</code>
      *
      * @param username  a ScreenName of the user
-     * @return  the user details and timeline  to the @view profile.scala.html
-     * @throws TwitterException
+     * @return  the user details and timeline to the profile.scala.html
+     * @throws TwitterException It throws a TwitterException
      *
      */
     public CompletionStage<Result> profile(String username) throws TwitterException {

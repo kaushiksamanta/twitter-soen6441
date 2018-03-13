@@ -1,13 +1,7 @@
-# Routes
-# This file defines all application routes (Higher priority routes first)
-# ~~~~
-
-# Root controller to show twitter search page
 GET     /                               controllers.IndexController.root()
 
 GET     /userProfile/:username          controllers.ProfileController.profile(username: String)
 
 GET		/tweets/:keyword				controllers.SearchController.searchTweet(keyword: String)
 
-# Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file                   controllers.Assets.versioned(path="/public", file: Asset)
