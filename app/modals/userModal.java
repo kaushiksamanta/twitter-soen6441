@@ -118,45 +118,81 @@ public class userModal {
 	}
 
 	/**
-	 * Retrieve the value of id.
-	 * @return A long data type.
+	 * Retrieve the value of name.
+	 * @return A String data type.
 	 */
 	public String getName() {
 		return name;
 	}
-	
+
+	/**
+	 * Retrieve the value of email.
+	 * @return A String data type.
+	 */
 	public String getEmail() {
 		return email;
 	}
-	
+
+	/**
+	 * Retrieve the value of screenName.
+	 * @return A String data type.
+	 */
 	public String getScreenName() {
 		return screenName;
 	}
-	
+
+	/**
+	 * Retrieve the value of location.
+	 * @return A String data type.
+	 */
 	public String getLocation() {
 		return location;
 	}
-	
+
+	/**
+	 * Retrieve the value of description.
+	 * @return A String data type.
+	 */
 	public String getDescription() {
 		return description;
 	}
-	
+
+	/**
+	 * Retrieve the value of followersCount.
+	 * @return A int data type.
+	 */
 	public int getFollowersCount() {
 		return followersCount;
 	}
-	
+
+	/**
+	 * Retrieve the value of publicUrl.
+	 * @return A String type.
+	 */
 	public String getUrl() {
 		return publicUrl;
 	}
-	
+
+	/**
+	 * Retrieve the value of isProtected.
+	 * @return A boolean  type.
+	 */
 	public Boolean getIsProtected() {
 		return isProtected;
 	}
-	
+
+	/**
+	 * Retrieve the value of profileImage.
+	 * @return A String type.
+	 */
 	public String getBiggerProfileImageURLHttps() {
 		return imageUrl;
 	}
-	
+
+	/**
+	 * Retrieve the value of timeline.
+	 * @return A List<String> type.
+	 */
 	public List<String> getTimeline() {
 		return timeline;
 	}
