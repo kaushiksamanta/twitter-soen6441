@@ -11,6 +11,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * profileViewUnitTest class contains all the test methods to test profile view.
+ * @author Tejpreet Kaur
  */
 public class profileViewUnitTest extends WithApplication {
 	userModal user;

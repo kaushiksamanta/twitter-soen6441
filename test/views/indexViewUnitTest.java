@@ -6,6 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * indexViewUnitTest class contains all the test methods to test index view.
+ * @author Tejpreet Kaur
  */
 public class indexViewUnitTest extends WithApplication {
 
