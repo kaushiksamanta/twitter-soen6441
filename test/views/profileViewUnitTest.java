@@ -17,6 +17,7 @@ public class profileViewUnitTest extends WithApplication {
 
 	/**
 	 * setup method is used to create userModal object.
+	 * @author Tejpreet Kaur
 	 */
 	@Before
 	public void setup() {
@@ -37,6 +38,7 @@ public class profileViewUnitTest extends WithApplication {
 
 	/**
 	 * renderTemplate method contains assertions.
+	 * @author Tejpreet Kaur
 	 */
 	@Test
 	public void renderTemplate() {

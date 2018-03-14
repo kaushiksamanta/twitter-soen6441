@@ -13,6 +13,7 @@ import java.util.concurrent.CompletionStage;
  * which gets the details of the user from twitterService
  * @version 1.0
  * @see ProfileController
+ * @author Kaushik Samanta
  */
 
 public class ProfileController extends Controller{
@@ -22,6 +23,7 @@ public class ProfileController extends Controller{
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/userProfile/:username</code>
      *
+     * @author Kaushik Samanta
      * @param username  a ScreenName of the user
      * @return  the user details and timeline to the profile.scala.html
      * @throws TwitterException It throws a TwitterException

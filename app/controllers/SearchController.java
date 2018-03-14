@@ -11,7 +11,7 @@ import java.util.concurrent.CompletionStage;
  * the keyword(s) entered by the user on in JSON format asynchronously.
  * @version 1.0
  * @see SearchController
- *
+ * @author Kaushik Samanta
  */
 
 public class SearchController extends Controller {
@@ -21,7 +21,7 @@ public class SearchController extends Controller {
      * The configuration in the routes file means that
      * this method will be called when the application receives a
      * <code>GET</code> request with a path of <code>/tweets/:keyword</code>.
-     *
+     * @author Kaushik Samanta
      * @param keyword  a string for keyword(s)
      * @return related tweets containing the keyword(s) in JSON format
      * @throws TwitterException It throws a TwitterException

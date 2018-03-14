@@ -6,6 +6,7 @@ import java.util.List;
  * userModal class to map the value from twitter and store.
  * @version 1.0
  * @see userModal
+ * @author Kaushik Samanta
  */
 public class userModal {
 	protected long id;
@@ -23,6 +24,7 @@ public class userModal {
 	/**
 	 * Set the value of id.
 	 * @param id A variable of type long.
+	 * @author Kaushik Samanta
 	 */
 	public void setId(long id) {
 		this.id = id;
@@ -31,6 +33,7 @@ public class userModal {
 	/**
 	 * Set the value of name.
 	 * @param name A variable of type String.
+	 * @author Kaushik Samanta
 	 */
 	public void setName(String name) {
 		this.name = name;
@@ -38,6 +41,7 @@ public class userModal {
 
 	/**
 	 * Set the value of email.
+	 * @author Kaushik Samanta
 	 * @param email A variable of type String.
 	 */
 	public void setEmail(String email) {
@@ -46,6 +50,7 @@ public class userModal {
 
 	/**
 	 * Set the value of screenName.
+	 * @author Kaushik Samanta
 	 * @param screenName A variable of type String.
 	 */
 	public void setScreenName(String screenName) {
@@ -54,6 +59,7 @@ public class userModal {
 
 	/**
 	 * Set the value of location.
+	 * @author Kaushik Samanta
 	 * @param location A variable of type String.
 	 */
 	public void setLocation(String location) {
@@ -62,6 +68,7 @@ public class userModal {
 
 	/**
 	 * Set the value of description.
+	 * @author Kaushik Samanta
 	 * @param description A variable of type String.
 	 */
 	public void setDescription(String description) {
@@ -70,6 +77,7 @@ public class userModal {
 
 	/**
 	 * Set the value of followersCount.
+	 * @author Kaushik Samanta
 	 * @param followersCount A variable of type int.
 	 */
 	public void setFollowersCount(int followersCount) {
@@ -78,6 +86,7 @@ public class userModal {
 
 	/**
 	 * Set the value of publicUrl.
+	 * @author Kaushik Samanta
 	 * @param publicUrl A variable of type String.
 	 */
 	public void setUrl(String publicUrl) {
@@ -86,6 +95,7 @@ public class userModal {
 
 	/**
 	 * Set the value of isProtected.
+	 * @author Kaushik Samanta
 	 * @param isProtected A variable of type String.
 	 */
 	public void setIsProtected(Boolean isProtected) {
@@ -94,6 +104,7 @@ public class userModal {
 
 	/**
 	 * Set the value of imageUrl.
+	 * @author Kaushik Samanta
 	 * @param imageUrl A variable of type String.
 	 */
 	public void setBiggerProfileImageURLHttps(String imageUrl) {
@@ -102,6 +113,7 @@ public class userModal {
 
 	/**
 	 * Set the value of timeline.
+	 * @author Kaushik Samanta
 	 * @param timeline A variable of type List.
 	 */
 	public void setTimeline(List<String> timeline) {
@@ -110,6 +122,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of id.
+	 * @author Kaushik Samanta
 	 * @return A long data type.
 	 */
 	public long getId() {
@@ -118,6 +131,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of name.
+	 * @author Kaushik Samanta
 	 * @return A String data type.
 	 */
 	public String getName() {
@@ -126,6 +140,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of email.
+	 * @author Kaushik Samanta
 	 * @return A String data type.
 	 */
 	public String getEmail() {
@@ -134,6 +149,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of screenName.
+	 * @author Kaushik Samanta
 	 * @return A String data type.
 	 */
 	public String getScreenName() {
@@ -142,6 +158,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of location.
+	 * @author Kaushik Samanta
 	 * @return A String data type.
 	 */
 	public String getLocation() {
@@ -150,6 +167,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of description.
+	 * @author Kaushik Samanta
 	 * @return A String data type.
 	 */
 	public String getDescription() {
@@ -158,6 +176,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of followersCount.
+	 * @author Kaushik Samanta
 	 * @return A int data type.
 	 */
 	public int getFollowersCount() {
@@ -166,6 +185,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of publicUrl.
+	 * @author Kaushik Samanta
 	 * @return A String type.
 	 */
 	public String getUrl() {
@@ -174,6 +194,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of isProtected.
+	 * @author Kaushik Samanta
 	 * @return A boolean  type.
 	 */
 	public Boolean getIsProtected() {
@@ -182,6 +203,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of profileImage.
+	 * @author Kaushik Samanta
 	 * @return A String type.
 	 */
 	public String getBiggerProfileImageURLHttps() {
@@ -190,6 +212,7 @@ public class userModal {
 
 	/**
 	 * Retrieve the value of timeline.
+	 * @author Kaushik Samanta
 	 * @return A List type.
 	 */
 	public List<String> getTimeline() {

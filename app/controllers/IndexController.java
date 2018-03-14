@@ -10,6 +10,7 @@ import views.html.*;
  * to the application's search page.
  * @version 1.0
  * @see IndexController
+ * @author Kaushik Samanta
  */
 
 public class IndexController extends Controller{
@@ -18,7 +19,7 @@ public class IndexController extends Controller{
 	 * The configuration in the <code>routes</code> file means that
 	 * this method will be called when the application receives a
 	 * <code>GET</code> request with a path of <code>/</code>.
-	 *
+	 * @author Kaushik Samanta
 	 * @return Returns a rendered html page
 	 */
 	public Result root() {

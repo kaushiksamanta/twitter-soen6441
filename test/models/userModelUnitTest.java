@@ -14,20 +14,21 @@ import static org.junit.Assert.assertTrue;
  * username.
  * @see userModal
  * @see userModelUnitTest
- * @author 
+ * @author Tejpreet Kaur
  *
  */
 
 public class userModelUnitTest {
     userModal user;
-/**
- * Method annotate with @Before will execute before
- *  each test method in this class is executed.
- *  
- *  Setup Method is  setting values of the properties 
- *  of the userModal class.
- *  
- */
+
+    /**
+     * Method annotate with @Before will execute before
+     * each test method in this class is executed.
+     *
+     * Setup Method is  setting values of the properties
+     * of the userModal class.
+     * @author Tejpreet Kaur
+     */
     @Before
     public void setup() {
         user = new userModal();
@@ -44,13 +45,13 @@ public class userModelUnitTest {
         timeline.add("RT @DNN_Blockchain: Following the success of our pre-sale and consultation with our community, our public sale start date has been delayed…");
         user.setTimeline(timeline);
     }
-/**
- * public void testUserModal annotate with @Test will be executed
- * as a Test case.
- * Unit Test for checking whether the screenName is correct
- * for the provide profile details.
- * 
- */
+
+    /**
+    * public void testUserModal annotate with @Test will be executed
+    * as a Test case.
+    * Unit Test for checking whether the screenName is correct
+    * for the provide profile details.
+    */
     @Test
     public void testUserModal() {
         assertTrue(user.getScreenName() == "NarendraGarg001");

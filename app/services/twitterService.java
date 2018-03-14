@@ -15,12 +15,13 @@ import java.util.concurrent.CompletionStage;
 /**
  * twitterService class contains all the methods required to access the twitter API.
  * @version 1.0
- *
+ * @author Kaushik Samanta
  */
 public class twitterService {
 
     /**
      * Retrieve the instance of twitter with some default configuration.
+     * @author Kaushik Samanta
      * @return A Twitter data type.
      */
     public static Twitter getTwitterinstance() {
@@ -37,6 +38,7 @@ public class twitterService {
 
     /**
      * Retrieve the instance of CompletionStage with tweets.
+     * @author Kaushik Samanta
      * @param keyword A keyword of type string.
      * @return A future data type.
      * @throws TwitterException It throws a TwitterException
@@ -62,6 +64,7 @@ public class twitterService {
 
     /**
      * Retrieve the instance of CompletionStage with userDetails.
+     * @author Kaushik Samanta
      * @param username A username of type string.
      * @return A future data type.
      * @throws TwitterException It throws a TwitterException
@@ -92,6 +95,7 @@ public class twitterService {
     }
     /**
      * Retrieve the user timeline details.
+     * @author Kaushik Samanta
      * @param username A username of type string.
      * @return A List data type.
      * @throws TwitterException It throws a TwitterException

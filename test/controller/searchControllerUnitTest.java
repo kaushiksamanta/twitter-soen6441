@@ -14,7 +14,7 @@ import java.util.concurrent.*;
  * 
  * @see SearchController
  * @see searchControllerUnitTest
- * @author 
+ * @author Tejpreet Kaur
  *
  */
 public class searchControllerUnitTest {
@@ -23,9 +23,7 @@ public class searchControllerUnitTest {
 	 * will be executed as a Test Case.
 	 * Unit Test to test the  whether the related  tweet(s) exist
 	 * for the given keyword(s) .
-	 * @throws TwitterException throws TwitterException
-	 * @throws ExecutionException throws ExecutionException
-	 * @throws InterruptedException throws InterruptedException
+     * @author Tejpreet Kaur
 	 */
     @Test
     public void testSearchController() throws TwitterException, ExecutionException, InterruptedException {

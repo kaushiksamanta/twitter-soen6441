@@ -11,6 +11,7 @@ public class indexViewUnitTest extends WithApplication {
 
 	/**
 	 * renderTemplate method contains assertions.
+	 * @author Tejpreet Kaur
 	 */
 
 	@Test

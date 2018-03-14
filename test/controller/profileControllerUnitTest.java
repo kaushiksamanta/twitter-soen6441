@@ -13,19 +13,17 @@ import java.util.concurrent.*;
  * profile details of the twitter users.
  * @see ProfileController
  * @see profileControllerUnitTest
- * @author 
+ * @author Tejpreet Kaur
  *
  */
 
 public class profileControllerUnitTest {
 	/**
-	 * public void testProfile annonated with @Test will be executed as
+	 * public void testProfile annotate with @Test will be executed as
 	 * a Test Case.
 	 * Unit Test to test the  whether the Twitter Profile details exists 
 	 * for a given twitter username .
-	 * @throws TwitterException throws TwitterException
-	 * @throws ExecutionException throws ExecutionException
-	 * @throws InterruptedException throws InterruptedException
+     * @author Tejpreet Kaur
 	 */
     @Test
     public void testProfile() throws TwitterException, ExecutionException, InterruptedException {

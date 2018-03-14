@@ -13,9 +13,7 @@ import play.mvc.Result;
  * IndexControllerUnitTest class contains the actions to test
  *   various properties  of the application's search page.
  * @version 1.0
- * @see IndexController
- * @see indexControllerUnitTest
- * @author 
+ * @author Tejpreet Kaur
  *
  */
 
@@ -27,6 +25,7 @@ public class indexControllerUnitTest {
 	 * Unit Test for the root method of the class IndexController.
 	 * In this Test Case , we are checking if the welcome search page
 	 * is being shown.
+     * @author Tejpreet Kaur
 	 */
 	
     @Test
