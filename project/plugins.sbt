@@ -11,4 +11,6 @@ addSbtPlugin("com.typesafe.sbt" % "sbt-play-enhancer" % "1.2.2")
 addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.2")
 
 // JaCoCo plugin
+
 addSbtPlugin("com.github.sbt" % "sbt-jacoco" % "3.0.3")
+

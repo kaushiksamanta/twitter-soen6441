@@ -15,7 +15,8 @@ libraryDependencies ++= Seq(
   "com.h2database" % "h2" % "1.4.196",
   "org.assertj" % "assertj-core" % "3.6.2" % Test,
   "org.awaitility" % "awaitility" % "2.0.0" % Test,
-  "org.twitter4j" % "twitter4j-async" % "4.0.6"
+  "org.twitter4j" % "twitter4j-async" % "4.0.6",
+  "javax.xml.bind" % "jaxb-api" % "2.1"
 )
 
 // Make verbose tests

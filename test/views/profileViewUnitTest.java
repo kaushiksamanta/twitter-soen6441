@@ -9,9 +9,15 @@ import play.test.WithApplication;
 import play.twirl.api.Content;
 import static org.assertj.core.api.Assertions.assertThat;
 
+/**
+ * profileViewUnitTest class contains all the test methods to test profile view.
+ */
 public class profileViewUnitTest extends WithApplication {
 	userModal user;
 
+	/**
+	 * setup method is used to create userModal object.
+	 */
 	@Before
 	public void setup() {
 		user = new userModal();
@@ -28,7 +34,10 @@ public class profileViewUnitTest extends WithApplication {
         timeline.add("RT @DNN_Blockchain: Following the success of our pre-sale and consultation with our community, our public sale start date has been delayed…");
         user.setTimeline(timeline);
 	}
-	
+
+	/**
+	 * renderTemplate method contains assertions.
+	 */
 	@Test
 	public void renderTemplate() {
 	  Content html = views.html.profile.render(user);

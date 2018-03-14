@@ -7,6 +7,7 @@ import services.twitterService;
 import views.html.*;
 import java.util.concurrent.CompletionStage;
 
+
 /**
  * ProfileController controller class contains a profile method
  * which gets the details of the user from twitterService
@@ -26,6 +27,7 @@ public class ProfileController extends Controller{
      * @throws TwitterException It throws a TwitterException
      *
      */
+
     public CompletionStage<Result> profile(String username) throws TwitterException {
         return twitterService.getUserDetails(username).thenApplyAsync((details -> ok(profile.render(details))));
     }
