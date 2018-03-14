@@ -15,7 +15,6 @@ import java.util.concurrent.CompletionStage;
 /**
  * twitterService class contains all the methods required to access the twitter API.
  * @version 1.0
- * @see twitterService
  *
  */
 public class twitterService {

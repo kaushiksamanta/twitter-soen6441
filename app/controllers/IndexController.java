@@ -8,6 +8,7 @@ import views.html.*;
  * IndexController class contains an action to handle HTTP requests
  * to the application's search page.
  * @version 1.0
+ * @see IndexController
  */
 
 public class IndexController extends Controller{

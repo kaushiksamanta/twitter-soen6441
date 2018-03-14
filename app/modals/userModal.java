@@ -6,7 +6,6 @@ import java.util.List;
  * userModal class to map the value from twitter and store.
  * @version 1.0
  * @see userModal
- *
  */
 public class userModal {
 	protected long id;
